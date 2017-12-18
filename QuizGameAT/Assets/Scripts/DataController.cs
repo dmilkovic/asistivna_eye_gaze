@@ -24,8 +24,14 @@ public class DataController : MonoBehaviour
     {
         roundIndex = index;
     }
-	
-	public RoundData GetCurrentRoundData()
+
+    public int GetAllRoundDataLength()
+    {
+        return allRoundData.Length;
+    }
+
+
+    public RoundData GetCurrentRoundData()
 	{
 		return allRoundData [roundIndex];
 	}
