@@ -11,9 +11,11 @@ public class loadJson : MonoBehaviour {
 
     public GameData gameData;
     private string gameDataProjectFilePath = "/StreamingAssets/data.json";
+    public Text title = null;
     public Text question = null;
     public Text answer = null;
     private JsonData inputJsonData;
+    public Canvas canvas;
 
     // Use this for initialization
     void Start()
@@ -32,12 +34,34 @@ public class loadJson : MonoBehaviour {
             string dataAsJson = File.ReadAllText(filePath);
             inputJsonData = JsonMapper.ToObject(dataAsJson);
 
-            for (int i = 0; i < inputJsonData["allRoundData"].Count; i++) {
+            for (int i = 0; i < inputJsonData["allRoundData"].Count; i++)
+            {
                 Debug.Log(inputJsonData["allRoundData"][i]["name"]);
             }
 
-            question.text = inputJsonData["allRoundData"][0]["name"].ToString();
-            answer.text = inputJsonData["allRoundData"][1]["name"].ToString();
+            title.text = inputJsonData["allRoundData"][0]["name"].ToString();
+            question.text = inputJsonData["allRoundData"][0]["questions"][0]["questionText"].ToString();
+            answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][0]["answerText"].ToString();
+            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][1]["answerText"].ToString();
+            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][2]["answerText"].ToString();
+            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][3]["answerText"].ToString();
+            //answer.enabled = false;
+
+            /*https://gamedev.stackexchange.com/questions/116177/how-to-dynamically-create-an-ui-text-object-in-unity-5
+             * dinamicki kreiranje button-a
+             * GameObject UItextGO = new GameObject("Test");
+            UItextGO.transform.SetParent(canvas.transform, false);
+
+            RectTransform trans = UItextGO.AddComponent<RectTransform>();
+            //trans.anchoredPosition = new Vector2(x, y);
+
+            Text test = UItextGO.AddComponent<Text>();
+            test.color = new Color(0f, 0f, 0f);
+            test.font = new Font("Arial");
+            test.fontStyle = FontStyle.Bold;
+            test.enabled = true;
+            test.text = "test";*/
+
 
         }
         else
@@ -48,6 +72,7 @@ public class loadJson : MonoBehaviour {
 
 
     }
+
 
     // Update is called once per frame
     void Update()
