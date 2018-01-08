@@ -14,6 +14,8 @@ public class loadJson : MonoBehaviour {
     public Text title = null;
     public Text question = null;
     public Text answer = null;
+    public InputField answerInputField;
+    public InputField questionInputField;
     private JsonData inputJsonData;
     public Canvas canvas;
 
@@ -37,11 +39,15 @@ public class loadJson : MonoBehaviour {
             for (int i = 0; i < inputJsonData["allRoundData"].Count; i++)
             {
                 Debug.Log(inputJsonData["allRoundData"][i]["name"]);
+                answerInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["answers"][i]["answerText"].ToString();
+                questionInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString();
             }
 
             title.text = inputJsonData["allRoundData"][0]["name"].ToString();
             question.text = inputJsonData["allRoundData"][0]["questions"][0]["questionText"].ToString();
             answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][0]["answerText"].ToString();
+            answerInputField.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][0]["answerText"].ToString();
+            questionInputField.text = inputJsonData["allRoundData"][0]["questions"][0]["questionText"].ToString();
             //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][1]["answerText"].ToString();
             //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][2]["answerText"].ToString();
             //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][3]["answerText"].ToString();
@@ -61,7 +67,6 @@ public class loadJson : MonoBehaviour {
             test.fontStyle = FontStyle.Bold;
             test.enabled = true;
             test.text = "test";*/
-
 
         }
         else

@@ -75,6 +75,7 @@ public class DataController : MonoBehaviour
             GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);
 
             allRoundData = loadedData.allRoundData;
+            Debug.Log(dataAsJson);
         }
         else
         {
