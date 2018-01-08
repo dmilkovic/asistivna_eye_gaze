@@ -18,6 +18,8 @@ public class loadJson : MonoBehaviour {
     public InputField questionInputField;
     private JsonData inputJsonData;
     public Canvas canvas;
+    public GameObject initialsObject;
+
 
     // Use this for initialization
     void Start()
@@ -36,49 +38,71 @@ public class loadJson : MonoBehaviour {
             string dataAsJson = File.ReadAllText(filePath);
             inputJsonData = JsonMapper.ToObject(dataAsJson);
 
-            //for (int i = 0; i < inputJsonData["allRoundData"].Count; i++)
-            //{
-            //    Debug.Log(inputJsonData["allRoundData"][i]["name"]);
-            //    Debug.Log(inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString());
-            //    answerInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["answers"][i]["answerText"].ToString();
-            //    questionInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString();
-            //}
+            GameObject inputFieldGo = GameObject.Find("pitanje");
+            InputField inputFieldCo = inputFieldGo.GetComponent<InputField>();
+            GameObject inputFieldA = GameObject.Find("odgovorA");
+            InputField inputFieldAa = inputFieldA.GetComponent<InputField>();
+            GameObject inputFieldB = GameObject.Find("odgovorB");
+            InputField inputFieldBb = inputFieldB.GetComponent<InputField>();
+            GameObject inputFieldC = GameObject.Find("odgovorC");
+            InputField inputFieldCc = inputFieldC.GetComponent<InputField>();
+            GameObject inputFieldD = GameObject.Find("odgovorD");
+            InputField inputFieldDd = inputFieldD.GetComponent<InputField>();
 
-            //Debug.Log(inputJsonData["allRoundData"][0]["name"]);
-            //Debug.Log(inputJsonData["allRoundData"][0]["pointsAddedForCorrectAnswer"]);
-            //Debug.Log(inputJsonData["allRoundData"][0]["questions"][1]["questionText"]);
+            /*GameObject naprijedButton = GameObject.Find("Naprijed");
+            Button naprijedOdabir = naprijedButton.GetComponent<Button>();
+            naprijedOdabir.onClick.AddListener(prethodnoPitanje);
+            GameObject natragButton = GameObject.Find("Natrag");
+            Button natragOdabir = natragButton.GetComponent<Button>();
+            natragOdabir.onClick.AddListener(sljedecePitanje);
 
-            /*int j = 0;
-            while (inputJsonData["allRoundData"][0]["questions"].Count > 0)
+            //int j = 0;
+            void prethodnoPitanje()
             {
-                Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"]);
-                j++;
+                Debug.Log("kliknuo si.");
+            }
+
+            void sljedecePitanje()
+            {
+                Debug.Log("kliknuo si nazad");
             }*/
+
             for (int j = 0; j < inputJsonData["allRoundData"][0]["questions"].Count; j++)
             {
+                inputFieldCo.text = inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString();
                 //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
                 //Debug.Log(j);
                 Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString());
-                for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
+                //for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
+                //{
+                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].IsString)
                 {
-                    if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][k]["isCorrect"].Equals(true))
-                    {
-                        //Debug.Log("true");
-                        Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["answers"][k]["answerText"].ToString());
-                    }
+                    inputFieldAa.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].ToString();
                 }
-                
-                
-            }
+                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].IsString)
+                {
+                    inputFieldBb.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].ToString();
+                }
+                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].IsString)
+                {
+                    inputFieldCc.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].ToString();
+                }
+                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].IsString)
+                {
+                    inputFieldDd.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].ToString();
+                }
 
-            title.text = inputJsonData["allRoundData"][0]["name"].ToString();
-            question.text = inputJsonData["allRoundData"][0]["questions"][0]["questionText"].ToString();
-            answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][0]["answerText"].ToString();
-            answerInputField.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][0]["answerText"].ToString();
-            questionInputField.text = inputJsonData["allRoundData"][0]["questions"][0]["questionText"].ToString();
-            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][1]["answerText"].ToString();
-            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][2]["answerText"].ToString();
-            //answer.text = inputJsonData["allRoundData"][0]["questions"][0]["answers"][3]["answerText"].ToString();
+            }
+            
+
+            //title.text = inputjsondata["allrounddata"][0]["name"].tostring();
+            //question.text = inputjsondata["allrounddata"][0]["questions"][0]["questiontext"].tostring();
+            //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][0]["answertext"].tostring();
+            //answerinputfield.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][0]["answertext"].tostring();
+            //questioninputfield.text = inputjsondata["allrounddata"][0]["questions"][0]["questiontext"].tostring();
+            //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][1]["answertext"].tostring();
+            //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][2]["answertext"].tostring();
+            //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][3]["answertext"].tostring();
             //answer.enabled = false;
 
             /*https://gamedev.stackexchange.com/questions/116177/how-to-dynamically-create-an-ui-text-object-in-unity-5
