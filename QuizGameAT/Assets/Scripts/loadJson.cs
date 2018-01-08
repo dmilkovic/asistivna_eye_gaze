@@ -22,7 +22,7 @@ public class loadJson : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Debug.Log("start"); //zasto duplo??
+        //Debug.Log("start"); //zasto duplo??
 
         SerializedObject serializedObject = new SerializedObject(this);
         SerializedProperty serializedProperty = serializedObject.FindProperty("gameData");
@@ -36,11 +36,39 @@ public class loadJson : MonoBehaviour {
             string dataAsJson = File.ReadAllText(filePath);
             inputJsonData = JsonMapper.ToObject(dataAsJson);
 
-            for (int i = 0; i < inputJsonData["allRoundData"].Count; i++)
+            //for (int i = 0; i < inputJsonData["allRoundData"].Count; i++)
+            //{
+            //    Debug.Log(inputJsonData["allRoundData"][i]["name"]);
+            //    Debug.Log(inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString());
+            //    answerInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["answers"][i]["answerText"].ToString();
+            //    questionInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString();
+            //}
+
+            //Debug.Log(inputJsonData["allRoundData"][0]["name"]);
+            //Debug.Log(inputJsonData["allRoundData"][0]["pointsAddedForCorrectAnswer"]);
+            //Debug.Log(inputJsonData["allRoundData"][0]["questions"][1]["questionText"]);
+
+            /*int j = 0;
+            while (inputJsonData["allRoundData"][0]["questions"].Count > 0)
             {
-                Debug.Log(inputJsonData["allRoundData"][i]["name"]);
-                answerInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["answers"][i]["answerText"].ToString();
-                questionInputField.text = inputJsonData["allRoundData"][i]["questions"][i]["questionText"].ToString();
+                Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"]);
+                j++;
+            }*/
+            for (int j = 0; j < inputJsonData["allRoundData"][0]["questions"].Count; j++)
+            {
+                //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
+                //Debug.Log(j);
+                Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString());
+                for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
+                {
+                    if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][k]["isCorrect"].Equals(true))
+                    {
+                        //Debug.Log("true");
+                        Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["answers"][k]["answerText"].ToString());
+                    }
+                }
+                
+                
             }
 
             title.text = inputJsonData["allRoundData"][0]["name"].ToString();

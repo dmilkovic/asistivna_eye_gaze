@@ -29,7 +29,7 @@ public class ReadJson : MonoBehaviour {
             GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);
 
             allRoundData = loadedData.allRoundData;
-            Debug.Log(dataAsJson);
+            //Debug.Log(dataAsJson);
         }
         else
         {
