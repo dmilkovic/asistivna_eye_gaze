@@ -14,11 +14,14 @@ public class loadJson : MonoBehaviour {
     public Text title = null;
     public Text question = null;
     public Text answer = null;
+    private string dataAsJson, filePath;
     public InputField answerInputField;
     public InputField questionInputField;
     private JsonData inputJsonData;
     public Canvas canvas;
     public GameObject initialsObject;
+    private int QuestionIndex = 0;
+    public InputField inputFieldCo, inputFieldAa, inputFieldBb, inputFieldCc, inputFieldDd;
 
 
     // Use this for initialization
@@ -30,15 +33,15 @@ public class loadJson : MonoBehaviour {
         SerializedProperty serializedProperty = serializedObject.FindProperty("gameData");
         serializedObject.ApplyModifiedProperties();
 
-        string filePath = Application.dataPath + gameDataProjectFilePath;
+        filePath = Application.dataPath + gameDataProjectFilePath;
 
         if (File.Exists(filePath))
         {
 
-            string dataAsJson = File.ReadAllText(filePath);
+            dataAsJson = File.ReadAllText(filePath);
             inputJsonData = JsonMapper.ToObject(dataAsJson);
 
-            GameObject inputFieldGo = GameObject.Find("pitanje");
+            /* inputFieldGo = GameObject.Find("pitanje");
             InputField inputFieldCo = inputFieldGo.GetComponent<InputField>();
             GameObject inputFieldA = GameObject.Find("odgovorA");
             InputField inputFieldAa = inputFieldA.GetComponent<InputField>();
@@ -48,7 +51,8 @@ public class loadJson : MonoBehaviour {
             InputField inputFieldCc = inputFieldC.GetComponent<InputField>();
             GameObject inputFieldD = GameObject.Find("odgovorD");
             InputField inputFieldDd = inputFieldD.GetComponent<InputField>();
-
+            */
+            showData(QuestionIndex);
             /*GameObject naprijedButton = GameObject.Find("Naprijed");
             Button naprijedOdabir = naprijedButton.GetComponent<Button>();
             naprijedOdabir.onClick.AddListener(prethodnoPitanje);
@@ -66,35 +70,7 @@ public class loadJson : MonoBehaviour {
             {
                 Debug.Log("kliknuo si nazad");
             }*/
-
-            for (int j = 0; j < inputJsonData["allRoundData"][0]["questions"].Count; j++)
-            {
-                inputFieldCo.text = inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString();
-                //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
-                //Debug.Log(j);
-                Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString());
-                //for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
-                //{
-                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].IsString)
-                {
-                    inputFieldAa.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].ToString();
-                }
-                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].IsString)
-                {
-                    inputFieldBb.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].ToString();
-                }
-                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].IsString)
-                {
-                    inputFieldCc.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].ToString();
-                }
-                if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].IsString)
-                {
-                    inputFieldDd.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].ToString();
-                }
-
-            }
-            
-
+           
             //title.text = inputjsondata["allrounddata"][0]["name"].tostring();
             //question.text = inputjsondata["allrounddata"][0]["questions"][0]["questiontext"].tostring();
             //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][0]["answertext"].tostring();
@@ -125,84 +101,158 @@ public class loadJson : MonoBehaviour {
         {
             gameData = new GameData();
         }
-
-
-
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void showData(int QuestionIndex)
     {
-      
+        int j = QuestionIndex;
 
-    }
+        GameObject inputFieldGo = GameObject.Find("pitanje");
+        inputFieldCo = inputFieldGo.GetComponent<InputField>();
+        GameObject inputFieldA = GameObject.Find("odgovorA");
+        inputFieldAa = inputFieldA.GetComponent<InputField>();
+        GameObject inputFieldB = GameObject.Find("odgovorB");
+        inputFieldBb = inputFieldB.GetComponent<InputField>();
+        GameObject inputFieldC = GameObject.Find("odgovorC");
+        inputFieldCc = inputFieldC.GetComponent<InputField>();
+        GameObject inputFieldD = GameObject.Find("odgovorD");
+        inputFieldDd = inputFieldD.GetComponent<InputField>();
+        inputFieldCo.text = inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString();
 
-    /*void OnGUI()
-    {
-        question.text = myText;
-
-    }*/
-
-
-/*public GameData gameData;
-private string gameDataProjectFilePath = "/StreamingAssets/data.json";
-
-// Use this for initialization
-void Start () {
-
-}
-
-// Update is called once per frame
-void Update () {
-
-}
-
-void OnGUI()
-{
-    if (gameData != null)
-    {
-        SerializedObject serializedObject = new SerializedObject(this);
-        SerializedProperty serializedProperty = serializedObject.FindProperty("gameData");
-
-        EditorGUILayout.PropertyField(serializedProperty, true);
-        //TODO: trebalo bi ovako mozda https://docs.unity3d.com/Manual/gui-Layout.html
-
-        serializedObject.ApplyModifiedProperties();
-
-        if (GUILayout.Button("Save data"))
+        //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
+        //Debug.Log(j);
+        Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString());
+        //for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
+        //{
+        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].IsString)
         {
-            SaveGameData();
+            inputFieldAa.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].ToString();
+        }
+        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].IsString)
+        {
+            inputFieldBb.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].ToString();
+        }
+        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].IsString)
+        {
+            inputFieldCc.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].ToString();
+        }
+        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].IsString)
+        {
+            inputFieldDd.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].ToString();
         }
     }
 
-    if (GUILayout.Button("Load data"))
+    public void NextQuestion()
     {
-        LoadGameData();
+        Debug.Log("Stisnut NEXT");
+        if((QuestionIndex+1) == inputJsonData["allRoundData"][0]["questions"].Count)
+        {
+            QuestionIndex = 0;
+        }
+        else
+        {
+            QuestionIndex += 1;
+        }
+        showData(QuestionIndex);
     }
+
+    public void PreviousQuestion()
+    {
+        if (QuestionIndex == 0)
+        {
+            QuestionIndex = inputJsonData["allRoundData"][0]["questions"].Count-1;
+        }
+        else
+        {
+            QuestionIndex -= 1;
+        }
+        Debug.Log(QuestionIndex);
+        showData(QuestionIndex);
+    }
+
+    /*public void SaveGameData()
+    {
+        string dataAsJson = JsonUtility.ToJson(gameData);
+
+        string filePath = Application.dataPath + gameDataProjectFilePath;
+        File.WriteAllText(filePath, dataAsJson);
+    }*/
+
+    public void SaveQuestionsData()
+    {
+        inputJsonData["allRoundData"][0]["questions"][QuestionIndex]["questionText"] = inputFieldCo.text;
+        dataAsJson = JsonMapper.ToJson(inputJsonData);
+        File.WriteAllText(filePath, dataAsJson);
+        Debug.Log(dataAsJson);
+    }
+
+// Update is called once per frame
+void Update()
+{
+
+
 }
 
-public void LoadGameData()
+/*void OnGUI()
 {
-    string filePath = Application.dataPath + gameDataProjectFilePath;
+    question.text = myText;
 
-    if (File.Exists(filePath))
-    {
-        string dataAsJson = File.ReadAllText(filePath);
-
-        gameData = JsonUtility.FromJson<GameData>(dataAsJson);
-    }
-    else
-    {
-        gameData = new GameData();
-    }
-}
-
-private void SaveGameData()
-{
-    string dataAsJson = JsonUtility.ToJson(gameData);
-
-    string filePath = Application.dataPath + gameDataProjectFilePath;
-    File.WriteAllText(filePath, dataAsJson);
 }*/
+
+
+    /*public GameData gameData;
+    private string gameDataProjectFilePath = "/StreamingAssets/data.json";
+
+    // Use this for initialization
+    void Start () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+
+    void OnGUI()
+    {
+        if (gameData != null)
+        {
+            SerializedObject serializedObject = new SerializedObject(this);
+            SerializedProperty serializedProperty = serializedObject.FindProperty("gameData");
+
+            EditorGUILayout.PropertyField(serializedProperty, true);
+            //TODO: trebalo bi ovako mozda https://docs.unity3d.com/Manual/gui-Layout.html
+
+            serializedObject.ApplyModifiedProperties();
+
+            if (GUILayout.Button("Save data"))
+            {
+                SaveGameData();
+            }
+        }
+
+        if (GUILayout.Button("Load data"))
+        {
+            LoadGameData();
+        }
+    }
+
+    public void LoadGameData()
+    {
+        string filePath = Application.dataPath + gameDataProjectFilePath;
+
+        if (File.Exists(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+
+            gameData = JsonUtility.FromJson<GameData>(dataAsJson);
+        }
+        else
+        {
+            gameData = new GameData();
+        }
+    }
+    */
+
+
 }
