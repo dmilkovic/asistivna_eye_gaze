@@ -185,7 +185,7 @@ public class loadJson : MonoBehaviour {
 
     public void SaveQuestionsData()
     {
-        inputJsonData["allRoundData"][0]["questions"][QuestionIndex]["questionText"] = inputFieldCo.text;
+        inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["questionText"] = inputFieldCo.text;
         dataAsJson = JsonMapper.ToJson(inputJsonData);
         File.WriteAllText(filePath, dataAsJson);
         Debug.Log(dataAsJson);
@@ -298,5 +298,9 @@ public class loadJson : MonoBehaviour {
         showData(QuestionIndex, roundIndex);
     }
 
+    public void eraseQuestion()
+    {
+
+    }
 
 }
