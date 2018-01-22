@@ -1,1 +1,99 @@
-{"allRoundData":[{"name":"Ponavljanje 1","timeLimitInSeconds":90,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"Mi idemo u :sfdfsd","answers":[{"answerText":"prvi razred","isCorrect":true},{"answerText":"drugi razred","isCorrect":false},{"answerText":"tre\u0107i razred","isCorrect":false},{"answerText":"\u010Detvrti razred","isCorrect":false}]},{"questionText":"Koja se prostorija NE nalazi u \u0161koli?","answers":[{"answerText":"Knji\u017Enica","isCorrect":false},{"answerText":"Kuhinja","isCorrect":false},{"answerText":"Svla\u010Dionica","isCorrect":true},{"answerText":"Zbornica","isCorrect":false}]},{"questionText":"Koja tvrdnja JE to\u010Dna?","answers":[{"answerText":"Mi smo u\u010Denici i u\u010Denice.","isCorrect":true},{"answerText":"\u0160kolske knjige ne treba \u010Duvati.","isCorrect":false},{"answerText":"O urednosti u\u010Dionice brine se samo sprema\u010Dica.","isCorrect":false},{"answerText":"Bilje\u017Enice se bacaju na pod.","isCorrect":false}]},{"questionText":"Dane kruha obilje\u017Eavamo u :","answers":[{"answerText":"prolje\u0107e","isCorrect":false},{"answerText":"ljeto","isCorrect":false},{"answerText":"jesen","isCorrect":true},{"answerText":"zimu","isCorrect":false}]},{"questionText":"Koja je tvrdnja pogre\u0161na?","answers":[{"answerText":"U jesen rijetko pada ki\u0161a.","isCorrect":true},{"answerText":"U jesen li\u0161\u0107e \u017Euti i otpada.","isCorrect":false},{"answerText":"U jesen sunce slabije grije.","isCorrect":false},{"answerText":"U jesen pravimo snjegovi\u0107a.","isCorrect":false}]},{"questionText":"Koja ptica NIJE selica?","answers":[{"answerText":"roda","isCorrect":false},{"answerText":"vrabac","isCorrect":true},{"answerText":"lastavica","isCorrect":false},{"answerText":"slavuj","isCorrect":false}]},{"questionText":"Koja \u017Eivotinja spava zimski san?","answers":[{"answerText":"kos","isCorrect":false},{"answerText":"vuk","isCorrect":false},{"answerText":"medvjed","isCorrect":true},{"answerText":"lisica","isCorrect":false}]},{"questionText":"Tko NE \u010Dini obitelj?","answers":[{"answerText":"prijatelj","isCorrect":true},{"answerText":"mama","isCorrect":false},{"answerText":"tata","isCorrect":false},{"answerText":"djeca","isCorrect":false}]},{"questionText":"Koja se prostorija NE nalazi u domu?","answers":[{"answerText":"kupaonica","isCorrect":false},{"answerText":"zbornica","isCorrect":true},{"answerText":"predsoblje","isCorrect":false},{"answerText":"spavaonica","isCorrect":false}]},{"questionText":"Koja tvrdnja JE to\u010Dna?","answers":[{"answerText":"Vrata mo\u017Ee\u0161 otvoriti i nepoznatima.","isCorrect":false},{"answerText":"Tabletama se ne mo\u017Ee otrovati.","isCorrect":false},{"answerText":"\u0160ibicama mo\u017Ee\u0161 izazvati po\u017Ear.","isCorrect":true},{"answerText":"No\u017Eem se djeca smiju igrati.","isCorrect":false}]}]},{"name":"Ponavljanje 2","timeLimitInSeconds":90,"pointsAddedForCorrectAnswer":10,"questions":[{"questionText":"Bo\u017Ei\u0107 obilje\u017Eavamo u :","answers":[{"answerText":"prolje\u0107e","isCorrect":false},{"answerText":"ljeto","isCorrect":false},{"answerText":"jesen","isCorrect":false},{"answerText":"zimu","isCorrect":true}]},{"questionText":"\u0160to NE spada u zimu?","answers":[{"answerText":"dozrijeva raj\u010Dica","isCorrect":true},{"answerText":"toplija odje\u0107a","isCorrect":false},{"answerText":"no\u0107i su du\u017Ee, a dani kra\u0107i","isCorrect":false},{"answerText":"zale\u0111eni plo\u010Dnici","isCorrect":false}]},{"questionText":"Ceste u naseljima zovemo :","answers":[{"answerText":"plo\u010Dnici","isCorrect":false},{"answerText":"kolnici","isCorrect":false},{"answerText":"ceste","isCorrect":false},{"answerText":"ulice","isCorrect":true}]},{"questionText":"Na \u0161to jedino NE treba\u0161 paziti u prometu?","answers":[{"answerText":"Koja je boja upaljena na semaforu.","isCorrect":false},{"answerText":"Koliko je sati.","isCorrect":true},{"answerText":"Gdje je pje\u0161a\u010Dki prijelaz.","isCorrect":false},{"answerText":"Da li ima vozila na kolniku.","isCorrect":false}]},{"questionText":"Koje je doba dana izme\u0111u jutra i podneva?","answers":[{"answerText":"prijepodne","isCorrect":true},{"answerText":"ve\u010Der","isCorrect":false},{"answerText":"poslijepodne","isCorrect":false},{"answerText":"no\u0107","isCorrect":false}]},{"questionText":"Koji je dan izme\u0111u nedjelje i utorka?","answers":[{"answerText":"subota","isCorrect":false},{"answerText":"srijeda","isCorrect":false},{"answerText":"ponedjeljak","isCorrect":true},{"answerText":"petak","isCorrect":false}]},{"questionText":"Koji cvijet NIJE vjesnik prolje\u0107a?","answers":[{"answerText":"cvijet limuna","isCorrect":true},{"answerText":"\u0161afran","isCorrect":false},{"answerText":"cvijet badema","isCorrect":false},{"answerText":"jaglac","isCorrect":false}]},{"questionText":"\u0160to JE to\u010Dno?","answers":[{"answerText":"Iza ve\u010Dere jedemo u\u017Einu.","isCorrect":false},{"answerText":"Doru\u010Dak treba biti obilan.","isCorrect":true},{"answerText":"Zube peremo samo nave\u010Der.","isCorrect":false},{"answerText":"Vodu ne treba \u0161tedjeti.","isCorrect":false}]},{"questionText":"Uskrs obilje\u017Eavamo u :","answers":[{"answerText":"prolje\u0107e","isCorrect":true},{"answerText":"ljeto","isCorrect":false},{"answerText":"jesen","isCorrect":false},{"answerText":"zimu","isCorrect":false}]},{"questionText":"Ljeti su :","answers":[{"answerText":"dani i no\u0107i jednako dugi","isCorrect":false},{"answerText":"dani du\u017Ei, a no\u0107i kra\u0107e","isCorrect":true},{"answerText":"dani kra\u0107i, a no\u0107i du\u017Ee","isCorrect":false}]}]}]}
+{"allRoundData":[
+{"name":"Ponavljanje 1", "pointsAddedForCorrectAnswer":10,
+"questions":[{"questionText":"Koliko tjedan ima dana? :",
+"answers":[{"answerText":"3","isCorrect":false},
+{"answerText":"5","isCorrect":false},
+{"answerText":"6","isCorrect":false},
+{"answerText":"7","isCorrect":true}]},
+{"questionText":"Ivana ide u školu treci dan u radnom tjednu. Koji je to dan?",
+"answers":[{"answerText":"Ponedjeljak","isCorrect":false},
+{"answerText":"Srijeda","isCorrect":true},
+{"answerText":"Četvrtak","isCorrect":false},
+{"answerText":"Petak","isCorrect":false}]},
+{"questionText":"Koji su neradni dani u tjednu?",
+"answers":[{"answerText":"Subota i nedjelja","isCorrect":true},
+{"answerText":"Utorak i srijeda","isCorrect":false},
+{"answerText":"Nedjelja i ponedjeljak","isCorrect":false},
+{"answerText":"Četvrtak i petak","isCorrect":false}]},
+{"questionText":"Kad se ujutro probudiš, koje je doba dana?",
+"answers":[{"answerText":"Večer","isCorrect":false},{"answerText":"Jutro","isCorrect":true},
+{"answerText":"Podne","isCorrect":false},{"answerText":"Sutra","isCorrect":false}]},
+{"questionText":"Marko ima strica, on je:","answers":[
+	{"answerText":"Mamina sestra","isCorrect":false},{
+	"answerText":"Tatin brat","isCorrect":true},
+	{"answerText":"Mamina sestra","isCorrect":false},
+	{"answerText":"Tatina sestra","isCorrect":false}]},
+{"questionText":"Koja ptica NIJE selica?","answers":[{
+	"answerText":"roda","isCorrect":false},{
+	"answerText":"vrabac","isCorrect":true},{
+	"answerText":"lastavica","isCorrect":false},{
+	"answerText":"slavuj","isCorrect":false}]},
+{"questionText":"Koja \u017Eivotinja spava zimski san?","answers":[{
+	"answerText":"kos","isCorrect":false},{
+	"answerText":"vuk","isCorrect":false},{
+	"answerText":"medvjed","isCorrect":true},{
+	"answerText":"lisica","isCorrect":false}]},
+{"questionText":"Tko NE \u010Dini obitelj?","answers":[{
+	"answerText":"prijatelj","isCorrect":true},{
+	"answerText":"mama","isCorrect":false},{
+	"answerText":"tata","isCorrect":false},{
+	"answerText":"djeca","isCorrect":false}]},
+{"questionText":"Koja se prostorija NE nalazi u domu?","answers":[{
+	"answerText":"kupaonica","isCorrect":false},
+	{"answerText":"zbornica","isCorrect":true},
+	{"answerText":"predsoblje","isCorrect":false},
+	{"answerText":"spavaonica","isCorrect":false}]},
+{"questionText":"Koja tvrdnja JE to\u010Dna?","answers":[
+{"answerText":"Vrata mo\u017Ee\u0161 otvoriti i nepoznatima.","isCorrect":false},
+{"answerText":"Tabletama se ne mo\u017Ee otrovati.","isCorrect":false},
+{"answerText":"\u0160ibicama mo\u017Ee\u0161 izazvati po\u017Ear.","isCorrect":true},
+{"answerText":"No\u017Eem se djeca smiju igrati.","isCorrect":false}]}]},
+{"name":"Ponavljanje 2","pointsAddedForCorrectAnswer":10,"questions":[
+{"questionText":"Bo\u017Ei\u0107 obilje\u017Eavamo u :","answers":[
+{"answerText":"prolje\u0107e","isCorrect":false},
+{"answerText":"ljeto","isCorrect":false},
+{"answerText":"jesen","isCorrect":false},
+{"answerText":"zimu","isCorrect":true}]},
+{"questionText":"\u0160to NE spada u zimu?","answers":[
+{"answerText":"dozrijeva raj\u010Dica","isCorrect":true},
+{"answerText":"toplija odje\u0107a","isCorrect":false},
+{"answerText":"no\u0107i su du\u017Ee, a dani kra\u0107i","isCorrect":false},
+{"answerText":"zale\u0111eni plo\u010Dnici","isCorrect":false}]},
+{"questionText":"Kad dodje do požara koga trebamo zvati?","answers":[
+{"answerText":"Policiju","isCorrect":false},
+{"answerText":"Prijatelja","isCorrect":false},
+{"answerText":"Vatrogasce","isCorrect":true},
+{"answerText":"Baku","isCorrect":false}]},
+{"questionText":"Voda tekucica je:","answers":[
+{"answerText":"More","isCorrect":false},
+{"answerText":"Jezero","isCorrect":false},
+{"answerText":"Bara","isCorrect":false},
+{"answerText":"Rijeka","isCorrect":true}]},
+{"questionText":"Najveca voda stajacica je :","answers":[
+{"answerText":"Jezero","isCorrect":false},
+{"answerText":"More","isCorrect":true},
+{"answerText":"Bara","isCorrect":false},
+{"answerText":"Močvara","isCorrect":false}]},
+{"questionText":"Ujutro obitelj pozdravljavamo sa:","answers":[
+{"answerText":"Laku noc","isCorrect":false},
+{"answerText":"Dobro vece","isCorrect":false},
+{"answerText":"Dobro jutro","isCorrect":true},
+{"answerText":"Dobar dan","isCorrect":false}]},
+{"questionText":"Kako se zove dio prometnice po kojoj se krecu pješaci:","answers":[
+{"answerText":"Kolnik","isCorrect":false},
+{"answerText":"Nogostup","isCorrect":true},
+{"answerText":"Livada","isCorrect":false},
+{"answerText":"Semafor","isCorrect":false}]},
+{"questionText":"Koja boja na semaforu znaci da smiješ prijeci cestu?","answers":[
+{"answerText":"Žuto","isCorrect":false},
+{"answerText":"Crveno","isCorrect":false},
+{"answerText":"Zeleno","isCorrect":true}]},
+{"questionText":"Uskrs obilje\u017Eavamo u :","answers":[
+{"answerText":"prolje\u0107e","isCorrect":true},
+{"answerText":"ljeto","isCorrect":false},
+{"answerText":"jesen","isCorrect":false},
+{"answerText":"zimu","isCorrect":false}]},
+{"questionText":"Ljeti su :","answers":[
+{"answerText":"dani i no\u0107i jednako dugi","isCorrect":false},
+{"answerText":"dani du\u017Ei, a no\u0107i kra\u0107e","isCorrect":true},
+{"answerText":"dani kra\u0107i, a no\u0107i du\u017Ee","isCorrect":false}]}]}]}
