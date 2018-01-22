@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
 using LitJson;
@@ -29,9 +29,9 @@ public class loadJson : MonoBehaviour {
     {
         //Debug.Log("start"); //zasto duplo??
 
-        SerializedObject serializedObject = new SerializedObject(this);
+       /* SerializedObject serializedObject = new SerializedObject(this);
         SerializedProperty serializedProperty = serializedObject.FindProperty("gameData");
-        serializedObject.ApplyModifiedProperties();
+        serializedObject.ApplyModifiedProperties();*/
 
         filePath = Application.dataPath + gameDataProjectFilePath;
 
@@ -184,6 +184,9 @@ public class loadJson : MonoBehaviour {
         dataAsJson = JsonMapper.ToJson(inputJsonData);
         File.WriteAllText(filePath, dataAsJson);
         Debug.Log(dataAsJson);
+    }
+    public void addQuestion() {
+
     }
 
 // Update is called once per frame
