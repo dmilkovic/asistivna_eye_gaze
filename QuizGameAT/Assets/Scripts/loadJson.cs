@@ -21,9 +21,11 @@ public class loadJson : MonoBehaviour {
     public Canvas canvas;
     public GameObject initialsObject;
     private int QuestionIndex = 0;
+    private int roundIndex = 0;
     public InputField inputFieldCo, inputFieldAa, inputFieldBb, inputFieldCc, inputFieldDd;
+    public GameObject ponavljanjeDisplay;
+    public GameObject pitanjaDisplay;
     GameController gameController = new GameController();
-
 
     // Use this for initialization
     void Start()
@@ -42,6 +44,8 @@ public class loadJson : MonoBehaviour {
             dataAsJson = File.ReadAllText(filePath);
             inputJsonData = JsonMapper.ToObject(dataAsJson);
 
+            LoadRoundButtons();
+
             /* inputFieldGo = GameObject.Find("pitanje");
             InputField inputFieldCo = inputFieldGo.GetComponent<InputField>();
             GameObject inputFieldA = GameObject.Find("odgovorA");
@@ -53,7 +57,7 @@ public class loadJson : MonoBehaviour {
             GameObject inputFieldD = GameObject.Find("odgovorD");
             InputField inputFieldDd = inputFieldD.GetComponent<InputField>();
             */
-            showData(QuestionIndex);
+
             /*GameObject naprijedButton = GameObject.Find("Naprijed");
             Button naprijedOdabir = naprijedButton.GetComponent<Button>();
             naprijedOdabir.onClick.AddListener(prethodnoPitanje);
@@ -71,7 +75,7 @@ public class loadJson : MonoBehaviour {
             {
                 Debug.Log("kliknuo si nazad");
             }*/
-           
+
             //title.text = inputjsondata["allrounddata"][0]["name"].tostring();
             //question.text = inputjsondata["allrounddata"][0]["questions"][0]["questiontext"].tostring();
             //answer.text = inputjsondata["allrounddata"][0]["questions"][0]["answers"][0]["answertext"].tostring();
@@ -104,7 +108,7 @@ public class loadJson : MonoBehaviour {
         }
     }
 
-    private void showData(int QuestionIndex)
+    private void showData(int QuestionIndex, int roundIndex)
     {
         int j = QuestionIndex;
 
@@ -118,35 +122,35 @@ public class loadJson : MonoBehaviour {
         inputFieldCc = inputFieldC.GetComponent<InputField>();
         GameObject inputFieldD = GameObject.Find("odgovorD");
         inputFieldDd = inputFieldD.GetComponent<InputField>();
-        inputFieldCo.text = inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString();
+        inputFieldCo.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["questionText"].ToString();
 
         //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
         //Debug.Log(j);
-        Debug.Log(inputJsonData["allRoundData"][0]["questions"][j]["questionText"].ToString());
+        Debug.Log(inputJsonData["allRoundData"][roundIndex]["questions"][j]["questionText"].ToString());
         //for (int k = 0; k < inputJsonData["allRoundData"][0]["questions"][j]["answers"].Count; k++)
         //{
-        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].IsString)
+        if (inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][0]["answerText"].IsString)
         {
-            inputFieldAa.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][0]["answerText"].ToString();
+            inputFieldAa.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][0]["answerText"].ToString();
         }
-        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].IsString)
+        if (inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][1]["answerText"].IsString)
         {
-            inputFieldBb.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][1]["answerText"].ToString();
+            inputFieldBb.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][1]["answerText"].ToString();
         }
-        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].IsString)
+        if (inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][2]["answerText"].IsString)
         {
-            inputFieldCc.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][2]["answerText"].ToString();
+            inputFieldCc.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][2]["answerText"].ToString();
         }
-        if (inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].IsString)
+        if (inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][3]["answerText"].IsString)
         {
-            inputFieldDd.text = inputJsonData["allRoundData"][0]["questions"][j]["answers"][3]["answerText"].ToString();
+            inputFieldDd.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][3]["answerText"].ToString();
         }
     }
 
     public void NextQuestion()
     {
         Debug.Log("Stisnut NEXT");
-        if((QuestionIndex+1) == inputJsonData["allRoundData"][0]["questions"].Count)
+        if((QuestionIndex+1) == inputJsonData["allRoundData"][roundIndex]["questions"].Count)
         {
             QuestionIndex = 0;
         }
@@ -154,21 +158,21 @@ public class loadJson : MonoBehaviour {
         {
             QuestionIndex += 1;
         }
-        showData(QuestionIndex);
+        showData(QuestionIndex, roundIndex);
     }
 
     public void PreviousQuestion()
     {
         if (QuestionIndex == 0)
         {
-            QuestionIndex = inputJsonData["allRoundData"][0]["questions"].Count-1;
+            QuestionIndex = inputJsonData["allRoundData"][roundIndex]["questions"].Count-1;
         }
         else
         {
             QuestionIndex -= 1;
         }
         Debug.Log(QuestionIndex);
-        showData(QuestionIndex);
+        showData(QuestionIndex, roundIndex);
     }
 
     /*public void SaveGameData()
@@ -202,11 +206,11 @@ public class loadJson : MonoBehaviour {
 
 }
 
-/*void OnGUI()
-{
-    question.text = myText;
+    /*void OnGUI()
+    {
+        question.text = myText;
 
-}*/
+    }*/
 
 
     /*public GameData gameData;
@@ -262,6 +266,37 @@ public class loadJson : MonoBehaviour {
         }
     }
     */
+
+    public GameObject prefabButton;
+    public RectTransform ParentPanel;
+
+    private DataController dataController;
+
+    public void LoadRoundButtons()
+    {
+        int numberOfRounds = inputJsonData["allRoundData"].Count;
+
+        for (int i = 0; i < numberOfRounds; i++)
+        {
+            int tempInt = i;
+
+            GameObject goButton = (GameObject)Instantiate(prefabButton);
+            goButton.transform.SetParent(ParentPanel, false);
+            goButton.transform.localScale = new Vector3(1, 1, 1);
+
+            Button tempButton = goButton.GetComponent<Button>();
+            tempButton.GetComponentInChildren<Text>().text = "Ponavljanje " + (tempInt + 1);
+            tempButton.onClick.AddListener(() => ButtonClicked(tempInt));
+        }
+    }
+
+    public void ButtonClicked(int buttonNo)
+    {
+        ponavljanjeDisplay.SetActive(false);
+        pitanjaDisplay.SetActive(true);
+        roundIndex = buttonNo;
+        showData(QuestionIndex, roundIndex);
+    }
 
 
 }
