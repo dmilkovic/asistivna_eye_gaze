@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-//using UnityEditor;
+using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
 using LitJson;
@@ -22,6 +22,7 @@ public class loadJson : MonoBehaviour {
     public GameObject initialsObject;
     private int QuestionIndex = 0;
     public InputField inputFieldCo, inputFieldAa, inputFieldBb, inputFieldCc, inputFieldDd;
+    GameController gameController = new GameController();
 
 
     // Use this for initialization
@@ -189,8 +190,13 @@ public class loadJson : MonoBehaviour {
 
     }
 
-// Update is called once per frame
-void Update()
+    public void ReturnToMenu()
+    {
+        gameController.ReturnToMenu();
+    }
+
+    // Update is called once per frame
+    void Update()
 {
 
 
