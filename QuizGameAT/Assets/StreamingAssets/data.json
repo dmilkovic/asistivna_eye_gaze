@@ -1,11 +1,11 @@
 {"allRoundData":[
 {"name":"Ponavljanje 1", "pointsAddedForCorrectAnswer":10,
-"questions":[{"questionText":"Koliko tjedan ima dana? :",
+"questions":[{"questionText":"Koliko tjedan ima dana?",
 "answers":[{"answerText":"3","isCorrect":false},
 {"answerText":"5","isCorrect":false},
 {"answerText":"6","isCorrect":false},
 {"answerText":"7","isCorrect":true}]},
-{"questionText":"Ivana ide u školu treci dan u radnom tjednu. Koji je to dan?",
+{"questionText":"Koji je treći dan u tjednu?",
 "answers":[{"answerText":"Ponedjeljak","isCorrect":false},
 {"answerText":"Srijeda","isCorrect":true},
 {"answerText":"Četvrtak","isCorrect":false},
@@ -15,9 +15,9 @@
 {"answerText":"Utorak i srijeda","isCorrect":false},
 {"answerText":"Nedjelja i ponedjeljak","isCorrect":false},
 {"answerText":"Četvrtak i petak","isCorrect":false}]},
-{"questionText":"Kad se ujutro probudiš, koje je doba dana?",
+{"questionText":"Nakon jutra dolazi?",
 "answers":[{"answerText":"Večer","isCorrect":false},{"answerText":"Jutro","isCorrect":true},
-{"answerText":"Podne","isCorrect":false},{"answerText":"Sutra","isCorrect":false}]},
+{"answerText":"Podne","isCorrect":true},{"answerText":"Sutra","isCorrect":false}]},
 {"questionText":"Marko ima strica, on je:","answers":[
 	{"answerText":"Mamina sestra","isCorrect":false},{
 	"answerText":"Tatin brat","isCorrect":true},
@@ -59,7 +59,7 @@
 {"answerText":"toplija odje\u0107a","isCorrect":false},
 {"answerText":"no\u0107i su du\u017Ee, a dani kra\u0107i","isCorrect":false},
 {"answerText":"zale\u0111eni plo\u010Dnici","isCorrect":false}]},
-{"questionText":"Kad dodje do požara koga trebamo zvati?","answers":[
+{"questionText":"Tko gasi požare?","answers":[
 {"answerText":"Policiju","isCorrect":false},
 {"answerText":"Prijatelja","isCorrect":false},
 {"answerText":"Vatrogasce","isCorrect":true},
@@ -75,19 +75,19 @@
 {"answerText":"Bara","isCorrect":false},
 {"answerText":"Močvara","isCorrect":false}]},
 {"questionText":"Ujutro obitelj pozdravljavamo sa:","answers":[
-{"answerText":"Laku noc","isCorrect":false},
-{"answerText":"Dobro vece","isCorrect":false},
+{"answerText":"Laku noć","isCorrect":false},
+{"answerText":"Dobro veče","isCorrect":false},
 {"answerText":"Dobro jutro","isCorrect":true},
 {"answerText":"Dobar dan","isCorrect":false}]},
-{"questionText":"Kako se zove dio prometnice po kojoj se krecu pješaci:","answers":[
+{"questionText":"Pješaci hodaju po?","answers":[
 {"answerText":"Kolnik","isCorrect":false},
 {"answerText":"Nogostup","isCorrect":true},
 {"answerText":"Livada","isCorrect":false},
 {"answerText":"Semafor","isCorrect":false}]},
-{"questionText":"Koja boja na semaforu znaci da smiješ prijeci cestu?","answers":[
+{"questionText":"Koja boja znači stop?","answers":[
 {"answerText":"Žuto","isCorrect":false},
-{"answerText":"Crveno","isCorrect":false},
-{"answerText":"Zeleno","isCorrect":true}]},
+{"answerText":"Crveno","isCorrect":true},
+{"answerText":"Zeleno","isCorrect":false}]},
 {"questionText":"Uskrs obilje\u017Eavamo u :","answers":[
 {"answerText":"prolje\u0107e","isCorrect":true},
 {"answerText":"ljeto","isCorrect":false},
