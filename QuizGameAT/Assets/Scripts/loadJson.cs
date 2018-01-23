@@ -185,7 +185,14 @@ public class loadJson : MonoBehaviour {
 
     public void SaveQuestionsData()
     {
+        //pitanje
         inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["questionText"] = inputFieldCo.text;
+        //odg
+        inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][0]["answerText"] = inputFieldAa.text;
+        inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][1]["answerText"] = inputFieldBb.text;
+        inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][2]["answerText"] = inputFieldCc.text;
+        inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][3]["answerText"] = inputFieldDd.text;
+        
         dataAsJson = JsonMapper.ToJson(inputJsonData);
         File.WriteAllText(filePath, dataAsJson);
         Debug.Log(dataAsJson);
