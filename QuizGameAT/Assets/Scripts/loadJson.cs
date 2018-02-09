@@ -23,6 +23,7 @@ public class loadJson : MonoBehaviour {
     private int QuestionIndex = 0;
     private int roundIndex = 0;
     public InputField inputFieldCo, inputFieldAa, inputFieldBb, inputFieldCc, inputFieldDd;
+    public Toggle trueFalseAa, trueFalseBb, trueFalseCc, trueFalseDd;
     public GameObject ponavljanjeDisplay;
     public GameObject pitanjaDisplay;
     GameController gameController = new GameController();
@@ -122,6 +123,15 @@ public class loadJson : MonoBehaviour {
         inputFieldCc = inputFieldC.GetComponent<InputField>();
         GameObject inputFieldD = GameObject.Find("odgovorD");
         inputFieldDd = inputFieldD.GetComponent<InputField>();
+        GameObject trueFalseA = GameObject.Find("trueA");
+        trueFalseAa = trueFalseA.GetComponent<Toggle>();
+        GameObject trueFalseB = GameObject.Find("trueB");
+        trueFalseBb = trueFalseB.GetComponent<Toggle>();
+        GameObject trueFalseC = GameObject.Find("trueC");
+        trueFalseCc = trueFalseC.GetComponent<Toggle>();
+        GameObject trueFalseD = GameObject.Find("trueD");
+        trueFalseDd = trueFalseD.GetComponent<Toggle>();
+
         inputFieldCo.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["questionText"].ToString();
 
         //questionInputField.text = inputJsonData["allRoundData"]["questions"]["questionText"][j].ToString();
@@ -145,6 +155,10 @@ public class loadJson : MonoBehaviour {
         {
             inputFieldDd.text = inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][3]["answerText"].ToString();
         }
+        trueFalseAa.isOn = (bool)inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][0]["isCorrect"];
+        trueFalseBb.isOn = (bool)inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][1]["isCorrect"];
+        trueFalseCc.isOn = (bool)inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][2]["isCorrect"];
+        trueFalseDd.isOn = (bool)inputJsonData["allRoundData"][roundIndex]["questions"][j]["answers"][3]["isCorrect"];
     }
 
     public void NextQuestion()
@@ -197,9 +211,7 @@ public class loadJson : MonoBehaviour {
         File.WriteAllText(filePath, dataAsJson);
         Debug.Log(dataAsJson);
     }
-    public void addQuestion() {
-
-    }
+ 
 
     public void ReturnToMenu()
     {
@@ -305,9 +317,52 @@ public class loadJson : MonoBehaviour {
         showData(QuestionIndex, roundIndex);
     }
 
-    public void eraseQuestion()
+    public void TrueA()
     {
+        trueFalseBb.isOn = false;
+        trueFalseCc.isOn = false;
+        trueFalseDd.isOn = false;
+        ChangeTrueFalse(0);
+    }
 
+    public void TrueB()
+    {
+        trueFalseAa.isOn = false;
+        trueFalseCc.isOn = false;
+        trueFalseDd.isOn = false;
+        ChangeTrueFalse(1);
+    }
+
+    public void TrueC()
+    {
+        trueFalseAa.isOn = false;
+        trueFalseBb.isOn = false;
+        trueFalseDd.isOn = false;
+        ChangeTrueFalse(2);
+    }
+
+    public void TrueD()
+    {
+        trueFalseAa.isOn = false;
+        trueFalseBb.isOn = false;
+        trueFalseCc.isOn = false;
+        ChangeTrueFalse(3);
+    }
+
+    public void ChangeTrueFalse(int index)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if(i==index)
+            {
+                inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][i]["isCorrect"] = true;
+            }
+            else
+            {
+                inputJsonData["allRoundData"][roundIndex]["questions"][QuestionIndex]["answers"][i]["isCorrect"] = false;
+            }
+        }
+        
     }
 
 }
